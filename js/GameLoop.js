@@ -10,8 +10,8 @@ context = canvas.getContext("2d");
 //player = new GameObject(100,canvas.height/2,100,100,"#eeea1e");
 //npc1 = new GameObject(300,canvas.height/2,100,100,"#1eaeff");
 //npc2 = new GameObject(600,canvas.height/2,100,100,"#df1eaf");
-player1 = new GameObject(0,canvas.height/2,30,100,"#00ff00");
-ball = new GameObject(50,canvas.height/2,100,100,"#00ff00");
+player1 = new GameObject(0,canvas.height/2,30,100,"#00bfff");
+ball = new GameObject(50,canvas.height/2,100,100,"#3c00ff");
 player1.vx = 0;
 player1.vy = 0;
 ball.vx = 5;
@@ -105,11 +105,11 @@ context.clearRect(0,0,canvas.width,canvas.height);
 
     if(w)
     {
-        player1.y += 4;
+        player1.y -= 4;
     }
     if(s)
     {
-        player1.y -= 4;
+        player1.y += 4;
     }
 
 
