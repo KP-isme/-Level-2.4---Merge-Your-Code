@@ -87,19 +87,19 @@ context.clearRect(0,0,canvas.width,canvas.height);
  ball.move();
     if (ball.x > canvas.width + ball.width/2)
     {
-        ball.vx *= -1
+        ball.vx *= -5
     }
     if (ball.x < 0 + ball.width/2)
     {
-        ball.vx = 2;
+        ball.vx = 5;
     }
     if (ball.y > canvas.height + ball.height/2)
     {
-        ball.vy *= -1
+        ball.vy *= -5;
     }
     if (ball.y < 0 + ball.height/2)
     {
-        ball.vy = 2;
+        ball.vy = 5;
     }
 
 
