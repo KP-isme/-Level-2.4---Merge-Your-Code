@@ -10,9 +10,12 @@ context = canvas.getContext("2d");
 //player = new GameObject(100,canvas.height/2,100,100,"#eeea1e");
 //npc1 = new GameObject(300,canvas.height/2,100,100,"#1eaeff");
 //npc2 = new GameObject(600,canvas.height/2,100,100,"#df1eaf");
-player1 = new GameObject(0,canvas.height/2,30,100,"#00bfff");
+player1 = new GameObject(0,canvas.height/2,30,100,"#00ff00");
+ball = new GameObject(50,canvas.height/2,100,100,"#00ff00");
 player1.vx = 0;
 player1.vy = 0;
+ball.vx = 5;
+ball.vy = 5;
 
 timer = setInterval(animate, interval);
 
@@ -81,15 +84,36 @@ else
 */
 context.clearRect(0,0,canvas.width,canvas.height);
 
-    if(w)
+ ball.move();
+    if (ball.x > canvas.width + ball.width/2)
     {
-        player1.y -= 4;
+        ball.vx *= -1
     }
-    if(s)
+    if (ball.x < 0 + ball.width/2)
+    {
+        ball.vx = 2;
+    }
+    if (ball.y > canvas.height + ball.height/2)
+    {
+        ball.vy *= -1
+    }
+    if (ball.y < 0 + ball.height/2)
+    {
+        ball.vy = 2;
+    }
+
+
+    if(w)
     {
         player1.y += 4;
     }
-    
+    if(s)
+    {
+        player1.y -= 4;
+    }
+
+
+
       if(player1.top() < 0)
     {
         player1.y = player1.height / 2;
@@ -103,4 +127,5 @@ context.clearRect(0,0,canvas.width,canvas.height);
     //npc2.drawCircle();
     //npc3.drawRect();
     player1.drawRect();
+    ball.drawCircle();
 }
